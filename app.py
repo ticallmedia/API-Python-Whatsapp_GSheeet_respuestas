@@ -12,11 +12,17 @@ load_dotenv()
 
 
 """
-Proyecto: Creacion API Whatsapp, con descarga de archivos en Google Sheet
+Proyecto: Creacion API Whatsapp, Funcional con descarga de archivos en Google Sheet
 
 Descripción: Al escribir un mensja por Whatsapp, este se guarda en SQL lite
 de RENDER, pero adicionalmente se cargara la ultima fila ingresada en la base
 de datos, y se copiara a Google Sheet
+
+Esta version interactua a traves de un menu que pemite elegir la opcion del interes
+del usuario.
+
+Se actaliza ling del archivo  LogEnventosTicAllMedia1
+https://docs.google.com/spreadsheets/d/1juGRsV5fSs_4LFvAiJNQE8TUMVr8c5KAW-pMaEo6Rh4/edit?usp=drive_link
 
 """
 #________________________________________________________________________________________________________
@@ -108,7 +114,7 @@ def exportar_eventos():
         client = gspread.authorize(creds)
 
         # Acceder al Google Sheet
-        sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1h-BAG21QOSKND3-v8w6j1RM6rVaYr171Fdl1MUODLBw/edit?usp=drive_link').sheet1
+        sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1juGRsV5fSs_4LFvAiJNQE8TUMVr8c5KAW-pMaEo6Rh4/edit?usp=drive_link').sheet1
         
         #buscar un texto
         titulos = []
