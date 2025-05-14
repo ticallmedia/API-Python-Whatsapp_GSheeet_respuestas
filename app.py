@@ -238,8 +238,9 @@ def recibir_mensajes(req):
 
                     #agregar_mensajes_log(json.dumps(text,numero))
                     #agregar_mensajes_log(json.dumps(numero))
-                    enviar_mensaje_whatsapp(text,numero)
+                    
                     agregar_mensajes_log(json.dumps({"mensaje": text, "telefono": numero}))
+                    enviar_mensaje_whatsapp(text,numero)
                     exportar_eventos()
 
 
@@ -279,7 +280,6 @@ def enviar_mensaje_whatsapp(texto,number):
         }
     
     agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
-    exportar_eventos()
 
     #convertir el diccionario a formato json
     data = json.dumps(data)
