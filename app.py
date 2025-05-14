@@ -268,7 +268,7 @@ def enviar_mensaje_whatsapp(texto,number):
             }
         }
     else:
-        body_mensaje = "🚀 Hola, visita mi web https://ticallmedia.com/.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información de los Servicios. 💼\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar catalogo en PDF. 📄\n4️⃣. Audio explicando a mayor detalle. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con un Agente. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
+        body_mensaje = "📌 Esta interesado en Información de los Servicios."
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -289,7 +289,7 @@ def enviar_mensaje_whatsapp(texto,number):
     #datos de WETA
     headers = {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAUhUBOY4RgBO827uKr9veFItY8uOLLDvZCPf3Br9VxMmStdFiyctN7i29zPffjjG0o4j1k5jRyw7KWhjkXZCecl39DKop5ndhG2hc7g6JV2eZCfSHZCIFh1uC7QJ9hpOkFCrCmxcwXyQ1pn4PSxNZCCQgp6vI4QiITm6hcS0Fg4R7ZC21FqAIpQ7HL9e89PTC5B5KiFFblap4x289hzMp4QE9TLtavKUNfbh9"
+        "Authorization" : "Bearer EAAUhUBOY4RgBO7o62Ba6z4yWCqsJExT8qGJkrvG8pwB2sunv7sOqAyQmFVbt6x8JagwNj2PncHWGiD9FHhb3oqO5bMZCrLJVMY50LMk6D5ZBqGNswwMXWcVPFjLxbuylZAzZCzc5PzFfjo5OAe4T3wRZASiZBaahL4j0c5zZANmKOFgAlmHCAiVtME81ycVKhaod2WzeZAlVOugoXEVZASuNjwgwuZCr7Xp7dqWBcZD"
     }
 
     connection = http.client.HTTPSConnection("graph.facebook.com")
