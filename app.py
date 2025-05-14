@@ -240,8 +240,8 @@ def recibir_mensajes(req):
                     #agregar_mensajes_log(json.dumps(numero))
                     
                     agregar_mensajes_log(json.dumps({"mensaje": text, "telefono": numero}))
-                    enviar_mensaje_whatsapp(text,numero)
                     exportar_eventos()
+                    enviar_mensaje_whatsapp(text,numero)
 
 
         return jsonify({'message': 'EVENT_RECEIVED'})
@@ -268,6 +268,7 @@ def enviar_mensaje_whatsapp(texto,number):
             }
         }
         agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
+        exportar_eventos()
     else:
         data = {
             "messaging_product": "whatsapp",
