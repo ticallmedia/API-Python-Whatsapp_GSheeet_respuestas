@@ -238,9 +238,8 @@ def recibir_mensajes(req):
 
                     #agregar_mensajes_log(json.dumps(text,numero))
                     #agregar_mensajes_log(json.dumps(numero))
-                    
-                    agregar_mensajes_log(json.dumps({"mensaje": text, "telefono": numero}))
                     enviar_mensaje_whatsapp(text,numero)
+                    agregar_mensajes_log(json.dumps({"mensaje": text, "telefono": numero}))
                     exportar_eventos()
 
 
