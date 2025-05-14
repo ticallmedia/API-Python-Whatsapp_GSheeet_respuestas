@@ -255,7 +255,7 @@ def enviar_mensaje_whatsapp(texto,number):
     numero = 1111111
 
     if "hola" in texto:
-        mensaje = "🚀 Hola, ¿Cómo estás? Bienvenido."
+        body_mensaje = "🚀 Hola, ¿Cómo estás? Bienvenido."
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
