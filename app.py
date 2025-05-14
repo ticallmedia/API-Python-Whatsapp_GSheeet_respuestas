@@ -266,6 +266,7 @@ def enviar_mensaje_whatsapp(texto,number):
                 "preview_url": False,
                 "body": body_mensaje
             }
+        agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
         }
     else:
         data = {
@@ -279,7 +280,7 @@ def enviar_mensaje_whatsapp(texto,number):
             }
         }
     
-    agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
+    #agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
 
     #convertir el diccionario a formato json
     data = json.dumps(data)
