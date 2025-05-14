@@ -263,6 +263,8 @@ def enviar_mensaje_whatsapp(texto,number):
                 "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
             }
         }
+        agregar_mensajes_log(json.dumps({"mensaje": texto, "telefono": numero}))
+        exportar_eventos()
     else:
         data = {
             "messaging_product": "whatsapp",
