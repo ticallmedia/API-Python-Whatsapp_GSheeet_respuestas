@@ -238,8 +238,9 @@ def recibir_mensajes(req):
 
                     #agregar_mensajes_log(json.dumps(text,numero))
                     #agregar_mensajes_log(json.dumps(numero))
-                    enviar_mensaje_whatsapp(text,numero)
+                    
                     agregar_mensajes_log(json.dumps({"mensaje": text, "telefono": numero}))
+                    enviar_mensaje_whatsapp(text,numero)
                     exportar_eventos()
 
 
@@ -266,8 +267,6 @@ def enviar_mensaje_whatsapp(texto,number):
                 "body": body_mensaje
             }
         }
-        agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
-        exportar_eventos()
     else:
         data = {
             "messaging_product": "whatsapp",
@@ -279,6 +278,9 @@ def enviar_mensaje_whatsapp(texto,number):
                 "body": "🚀 Hola, visita mi web https://ticallmedia.com/.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información de los Servicios. 💼\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar catalogo en PDF. 📄\n4️⃣. Audio explicando a mayor detalle. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con un Agente. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
             }
         }
+    
+    agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
+    exportar_eventos()
 
     #convertir el diccionario a formato json
     data = json.dumps(data)
