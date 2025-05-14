@@ -251,8 +251,11 @@ def recibir_mensajes(req):
 
 def enviar_mensaje_whatsapp(texto,number):
     texto = texto.lower()
+    body_mensaje = ""
+    numero = 1111111
 
     if "hola" in texto:
+        mensaje = "🚀 Hola, ¿Cómo estás? Bienvenido."
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -260,10 +263,10 @@ def enviar_mensaje_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
+                "body": body_mensaje
             }
         }
-        agregar_mensajes_log(json.dumps({"mensaje": texto, "telefono": numero}))
+        agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
         exportar_eventos()
     else:
         data = {
