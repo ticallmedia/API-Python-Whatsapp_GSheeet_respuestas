@@ -266,8 +266,8 @@ def enviar_mensaje_whatsapp(texto,number):
                 "preview_url": False,
                 "body": body_mensaje
             }
-        agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
         }
+        agregar_mensajes_log(json.dumps({"mensaje": body_mensaje, "telefono": numero}))
     else:
         data = {
             "messaging_product": "whatsapp",
